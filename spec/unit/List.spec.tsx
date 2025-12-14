@@ -37,5 +37,27 @@ it("отображение списка задач", () => {
 });
 
 it("Список содержит не больше 10 невыполненных задач", () => {
+  const onDelete = jest.fn();
+  const onToggle = jest.fn();
 
+  const items: Task[] = [...Array(11)].map((_, idx) => ({
+    id: String(idx + 1),
+    header: `task-${idx + 1}`,
+    done: false,
+  }));
+
+  items.push({
+    id: "done",
+    header: "completed",
+    done: true,
+  });
+
+  render(<List items={items} onDelete={onDelete} onToggle={onToggle} />);
+
+  const checkboxes = screen.getAllByRole("checkbox") as HTMLInputElement[];
+  const uncompleted = checkboxes.filter((x) => !x.checked);
+  const completed = checkboxes.filter((x) => x.checked);
+
+  expect(uncompleted).toHaveLength(10);
+  expect(completed).toHaveLength(1);
 });
