@@ -1,0 +1,139 @@
+.input-field-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 8px;
+    font-style: italic;
+    width: 100%;
+    gap: 4px;
+}
+
+.input-field-label {
+    font-size: 10px;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.input-field-input {
+    font-size: 12px;
+    height: 16px;
+    color: white;
+    background-color: #343A40;
+    border: 1px solid #363b42;
+    border-radius: 4px;
+    padding: 4px;
+    outline: none;
+}
+
+.input-field-input:focus {
+    border: 1px solid #575f6a;
+}
+
+.input-field-input::placeholder {
+    font-size: 10px;
+    color: gray;
+    font-style: italic;
+}
+
+.input-field-hint {
+    color: #c4d0e189;
+    height: 10px;
+}
+
+.blackout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    
+    z-index: 1000;
+    background-color: rgba(0,0,0, .2);
+    backdrop-filter: blur(2px);
+}
+
+.notifier-wrapper {
+    width: 140px;
+    padding: 12px;
+
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+
+    background-color: #484F59;
+    box-shadow: 0 2px 6px -4px rgba(0,0,0, .6);
+    border-radius: 4px;
+
+    z-index: 1001;
+}
+
+.button {
+    height: 16px;
+    
+    color: white;
+    background-color: #484F59;
+    border: 1px solid #363b42;
+    border-radius: 4px;
+
+    outline: none;
+}
+
+
+.button-with-text {
+    padding: 6px 12px;
+}
+
+.button-with-icon {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+}
+
+.button-with-icon:disabled {
+    opacity: 0.5;
+}
+
+.empty-wrapper {
+    text-align: center;
+    margin: 12px auto;
+
+    font-size: 10px;
+    opacity: .3;
+}
+
+.button:active:not(:disabled) {
+    background-color: #505863;
+    box-shadow: inset 0 0 5px #272b31;
+}
+
+.button > img {
+    object-fit: contain;
+    width: 150%;
+    height: 150%;
+    pointer-events: none;
+}
+
+.item-wrapper {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.item-wrapper label {
+    font-size: 12px;
+    user-select: none;
+    width: 100%;
+
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+}

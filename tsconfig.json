@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "allowJs": true,
+      "module": "commonjs",
+      "esModuleInterop": true,
+      "moduleResolution": "node",
+      "lib": ["dom", "esnext"],
+      "strict": true,
+      "sourceMap": true,
+      "target": "esnext",
+      "outDir": "build",
+      "paths": {
+        "src/*": ["./src/*"]
+      }
+    },
+    "include": ["src", "spec", "jest.d.ts", "global.d.ts"],
+    "exclude": ["node_modules", "coverage", "build"]
+  }

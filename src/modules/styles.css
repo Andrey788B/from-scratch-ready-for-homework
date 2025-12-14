@@ -1,0 +1,19 @@
+.new-task-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+
+    gap: 4px;
+    justify-content: stretch;
+    align-self: start;
+}
+
+.task-list {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4px;
+
+    padding-left: 0;
+    margin-top: 0;
+    width: 100%;
+}
