@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom';
+import { act } from '@testing-library/react';
 import { toBeShorterThan } from './spec/utils/custom-matchers/toBeShorterThan';
 import { toHaveDoneItem } from './spec/utils/custom-matchers/toHaveDoneItem';
 
@@ -37,3 +38,19 @@ Object.defineProperty(window, 'localStorage', {
     value: lSMock,
     writable: true,
 })
+
+afterEach(() => {
+    // Reset store and localStorage between tests to avoid test coupling
+    const { store } = require('src/store/configureStore');
+    const { resetState } = require('src/store/taskSlice');
+
+    act(() => {
+        store.dispatch(resetState());
+    });
+
+    for (const key of Object.keys(storage)) {
+        delete storage[key];
+    }
+
+    lSMock.setItem.mockClear();
+});
